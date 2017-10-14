@@ -15,4 +15,8 @@ app.post('/test', (req, res, next) => {
         text: 'Command is successful'
     })
 })
-app.listen(8080)
+
+// heroku will set port via env PORT
+const port = process.env.PORT || 8080
+
+app.listen(process.env.PORT || 8080)
