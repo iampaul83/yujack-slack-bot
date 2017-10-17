@@ -8,5 +8,6 @@ heroku 可以直接 connection github
 
 ## Bootstrap
 
-You need to setup the Verification TOKEN in the process.env.js,
-otherwise your request will not pass.
+You need to setup the `TOKEN` environment variable, which is Slack App's Verification Token, otherwise your request will not pass.
+
+You can setup it in .env file, in your system's environment or something like Heroku's [config vars](https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application)

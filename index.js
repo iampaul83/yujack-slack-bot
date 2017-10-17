@@ -1,8 +1,12 @@
+require('dotenv').config()
+if (!process.env.TOKEN) {
+    throw new Error('missing required env: TOKEN')
+}
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-require('./process.env.js')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -39,4 +43,4 @@ app.post('/interactive', (req, res, next) => {
 // heroku will set port via env PORT
 const port = process.env.PORT || 8080
 
-app.listen(process.env.PORT || 8080)
+app.listen(port)
